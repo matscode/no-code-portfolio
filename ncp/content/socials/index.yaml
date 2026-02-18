@@ -1,0 +1,15 @@
+position: bottom
+socialDisplay: both
+links:
+  - url: https://github.com/yourusername
+    openExternal: true
+  - url: https://twitter.com/yourusername
+    openExternal: true
+  - url: https://linkedin.com/in/yourusername
+    openExternal: true
+  - url: https://dribbble.com/yourusername
+    openExternal: true
+  - url: https://youtube.com/@yourusername
+    openExternal: true
+  - url: https://twitch.tv/yourusername
+    openExternal: true

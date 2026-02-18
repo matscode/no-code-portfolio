@@ -1,0 +1,25 @@
+workExperience:
+  enabled: true
+  sectionId: experience
+  sectionTitle: Experience
+  showSectionTitle: true
+projects:
+  enabled: true
+  sectionId: projects
+  sectionTitle: Projects
+  showSectionTitle: true
+openSource:
+  enabled: true
+  sectionId: opensource
+  sectionTitle: Open Source
+  showSectionTitle: true
+articles:
+  enabled: true
+  sectionId: articles
+  sectionTitle: Articles
+  showSectionTitle: true
+contact:
+  enabled: true
+  sectionId: contact
+  sectionTitle: Contact
+  showSectionTitle: true

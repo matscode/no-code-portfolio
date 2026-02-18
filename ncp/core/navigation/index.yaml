@@ -1,0 +1,11 @@
+enableNavigation: true
+links:
+  - label: Home
+    url: /
+    targetBlank: false
+  - label: Experience
+    url: /#experience
+    targetBlank: false
+  - label: Projects
+    url: /#projects
+    targetBlank: false

@@ -1,0 +1,4 @@
+email:
+  enabled: true
+  address: hello@example.com
+  label: Send an Email

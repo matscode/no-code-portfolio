@@ -1,0 +1,4 @@
+name: Zustand
+link: https://github.com/pmndrs/zustand
+primaryStack: TypeScript
+description: A small, fast and scalable bearbones state-management solution using simplified flux principles.

@@ -1,0 +1,4 @@
+name: React Query
+link: https://tanstack.com/query/latest
+primaryStack: TypeScript
+description: Powerful asynchronous state management for TS/JS, React, Solid, Vue and Svelte.
