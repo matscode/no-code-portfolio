@@ -54,14 +54,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     });
   }
 
-  if (features?.otherVentures?.enabled) {
-    routes.push({
-      url: `${baseUrl}/#${features.otherVentures.sectionId || 'ventures'}`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    });
-  }
-
   return routes;
 }

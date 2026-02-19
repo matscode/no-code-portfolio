@@ -29,6 +29,12 @@ export async function GET() {
 
   const expertise = profile?.expertise?.filter(Boolean) ?? [];
 
+  const workExperienceTitle = features?.workExperience?.sectionTitle || "Experience";
+  const projectsTitle = features?.projects?.sectionTitle || "Projects";
+  const openSourceTitle = features?.openSource?.sectionTitle || "Open Source";
+  const articlesTitle = features?.articles?.sectionTitle || "Articles";
+  const contactTitle = features?.contact?.sectionTitle || "Contact";
+
   const lines: string[] = [];
 
   lines.push(`# ${name} - ${title}`, "", `> ${title}`, "");
@@ -37,16 +43,14 @@ export async function GET() {
   lines.push(description || "");
   lines.push("");
 
-  lines.push("## Expertise");
   if (expertise.length > 0) {
+    lines.push("## Expertise");
     lines.push(...expertise.map((skill) => `- ${skill}`));
-  } else {
-    lines.push("- Software Engineering");
+    lines.push("");
   }
-  lines.push("");
 
   if (features?.contact?.enabled ?? true) {
-    lines.push("## Contact");
+    lines.push(`## ${contactTitle}`);
     lines.push(`- Website: ${baseUrl}`);
     if (contact?.email?.enabled && contact.email.address) {
       lines.push("- Email: Contact via website form");
@@ -59,7 +63,7 @@ export async function GET() {
   }
 
   if (features?.workExperience?.enabled) {
-    lines.push("## Work Experience");
+    lines.push(`## ${workExperienceTitle}`);
     if (sortedExperience.length > 0) {
       lines.push(
         ...sortedExperience.map((job) => {
@@ -75,7 +79,7 @@ export async function GET() {
   }
 
   if (features?.projects?.enabled) {
-    lines.push("## Projects");
+    lines.push(`## ${projectsTitle}`);
     if (projects.length > 0) {
       lines.push(
         ...projects.map((project) => {
@@ -92,7 +96,7 @@ export async function GET() {
   }
 
   if (features?.openSource?.enabled) {
-    lines.push("## Open Source");
+    lines.push(`## ${openSourceTitle}`);
     if (openSource.length > 0) {
       lines.push(
         ...openSource.map((repo) => {
@@ -110,7 +114,7 @@ export async function GET() {
   }
 
   if (features?.articles?.enabled) {
-    lines.push("## Articles");
+    lines.push(`## ${articlesTitle}`);
     if (articles.length > 0) {
       lines.push(
         ...articles.map((article) => {
