@@ -16,7 +16,7 @@ export default config({
     },
     navigation: {
       'Basic': ['profile', 'socialLinks', 'contact'],
-      'Content': ['workExperience', 'projects', 'openSource', 'articles', /* 'otherVentures', */],
+      'Content': ['workExperience', 'projects', 'openSource', 'articles'],
       'Settings': ['features', 'globalNav', 'siteConfig', 'analytics'],
     },
   },
@@ -81,41 +81,6 @@ export default config({
         }),
       },
     }),
-    /* otherVentures: collection({
-      label: 'Other Ventures',
-      slugField: 'ventureName',
-      path: 'ncp/content/ventures/*' + '/',
-      format: { contentField: 'narrative' },
-      columns: ['ventureName', 'externalUrl'],
-      schema: {
-        ventureName: fields.slug({ name: { label: 'Venture Name', validation: { isRequired: true } } }),
-        externalUrl: fields.url({ label: 'External URL' }),
-        featuredImage: fields.image({
-          label: 'Featured Image',
-          directory: 'public/ncp/images/ventures',
-          publicPath: '/ncp/images/ventures',
-          description: 'Use compressed JPG/WEBP under ~500KB for fast loads. Resize/compress with Squoosh (squoosh.app).',
-        }),
-        gallery: fields.array(
-          fields.image({
-            label: 'Gallery Image',
-            directory: 'public/ncp/images/ventures',
-            publicPath: '/ncp/images/ventures',
-            description: 'Use compressed JPG/WEBP under ~500KB for fast loads. Resize/compress with Squoosh (squoosh.app).',
-          }),
-          {
-            label: 'Gallery',
-          }
-        ),
-        description: fields.text({ label: 'Description', multiline: true }),
-        narrative: fields.document({
-          label: 'Narrative / Motive',
-          formatting: true,
-          dividers: true,
-          links: true,
-        }),
-      },
-    }), */
     openSource: collection({
       label: 'Open Source',
       slugField: 'name',
@@ -262,12 +227,6 @@ export default config({
           sectionTitle: fields.text({ label: 'Section Title', defaultValue: 'Articles', description: 'Rename for your content (e.g., Articles, Guides, Reads, Blog).' }),
           showSectionTitle: fields.checkbox({ label: 'Show Section Title', defaultValue: true, description: 'Toggle the heading on/off for a cleaner link-in-bio layout.' }),
         }, { label: 'Articles' }),
-        /* otherVentures: fields.object({
-          enabled: fields.checkbox({ label: 'Other Ventures', defaultValue: false }),
-          sectionId: fields.text({ label: 'Section ID', defaultValue: 'ventures', description: 'Unique ID for navigation scrolling' }),
-          sectionTitle: fields.text({ label: 'Section Title', defaultValue: 'Other Ventures' }),
-          showSectionTitle: fields.checkbox({ label: 'Show Section Title', defaultValue: true }),
-        }, { label: 'Other Ventures' }), */
         contact: fields.object({
           enabled: fields.checkbox({ label: 'Contact / Get in Touch', defaultValue: true }),
           sectionId: fields.text({ label: 'Section ID', defaultValue: 'contact', description: 'Unique ID for navigation scrolling' }),
@@ -314,7 +273,7 @@ export default config({
           {
             label: 'Nav Links',
             itemLabel: (props) => props.fields.label.value,
-            description: 'Available Section IDs: experience, projects, opensource, articles, ventures. Check "Features" settings to customize them.',
+            description: 'Available Section IDs: experience, projects, opensource, articles. Check "Features" settings to customize them.',
           }
         ),
       },

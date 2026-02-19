@@ -22,7 +22,6 @@ export type KeystaticConfig = typeof keystaticConfig;
 // These will be fully typed based on your schema!
 export type WorkExperienceEntry = Entry<KeystaticConfig['collections']['workExperience']>;
 export type ProjectEntry = Entry<KeystaticConfig['collections']['projects']>;
-export type VentureEntry = Entry<KeystaticConfig['collections']['otherVentures']>;
 export type OpenSourceEntry = Entry<KeystaticConfig['collections']['openSource']>;
 export type ArticleEntry = Entry<KeystaticConfig['collections']['articles']>;
 

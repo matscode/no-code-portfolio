@@ -43,7 +43,6 @@ export default async function Page() {
     features?.articles?.enabled ? reader.collections.articles.all() : [],
     features?.workExperience?.enabled ? reader.collections.workExperience.all() : [],
   ]);
-  // otherVentures logic will be added when the section is re-enabled in UI
 
   const sortedExperience = sortWorkExperience(workExperience);
 
