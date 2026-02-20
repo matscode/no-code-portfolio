@@ -8,7 +8,6 @@ export default config({
   } : {
     kind: 'github',
     repo: `${process.env.NEXT_PUBLIC_NCP_GITHUB_USERNAME}/${process.env.NEXT_PUBLIC_NCP_REPO_NAME || 'no-code-portfolio'}` as `${string}/${string}`,
-    branchPrefix: process.env.NCP_GITHUB_TOKEN ? 'k/' : undefined,
   },
   ui: {
     brand: {

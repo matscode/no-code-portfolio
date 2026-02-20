@@ -10,7 +10,7 @@ const githubToken = process.env.NCP_GITHUB_TOKEN;
 export const reader = (storageKind === 'github' && githubToken)
   ? createGitHubReader(keystaticConfig, {
       repo: `${process.env.NEXT_PUBLIC_NCP_GITHUB_USERNAME}/${process.env.NEXT_PUBLIC_NCP_REPO_NAME || 'no-code-portfolio'}` as `${string}/${string}`,
-      ref: 'k/main',
+      ref: 'main',
       token: githubToken,
     })
   : createReader(process.cwd(), keystaticConfig);
