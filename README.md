@@ -4,9 +4,9 @@ A sophisticated personal website optimized for the AI era — launch a premium p
 
 Support My Work: [https://paystack.shop/pay/matscode](https://paystack.shop/pay/matscode)
 
-![Fully set up portfolio preview](./public/docs/SCR-20260220-hysa.png)
+![Editorial & Runway Model demo profile](./public/docs/isabella-vane-demo.png)
 
-Demos: [Product Designer](https://bombay-sigma.vercel.app)
+Demos: [Editorial & Runway Model](https://isabella-vane.vercel.app)
 
 ## Use Cases
 
