@@ -1,6 +1,6 @@
 ## Engineering README
 
-This guide covers local development and customization for the no-code-portfolio project.
+This guide helps developers run the project locally and contribute changes to the repo.
 
 ## Stack
 
@@ -24,6 +24,15 @@ yarn dev
 ```
 
 3. Open http://localhost:3000
+
+## Project Structure
+
+- src/app: App Router routes, metadata, and route handlers
+- src/components: UI building blocks
+- src/helpers: content helpers and data formatting
+- src/lib: shared utilities and Keystatic reader
+- ncp: Keystatic content source (local)
+- public/ncp: public assets used by content
 
 ## Content Editing (Keystatic)
 
@@ -50,9 +59,9 @@ Copy .env.example to .env.local and fill in values as needed:
 - KEYSTATIC_SECRET
 - NCP_GITHUB_TOKEN
 
-## Scripts
+## Contributing
 
-- yarn dev
-- yarn lint
-- yarn test
-- yarn build
+1. Fork the repo and create a new branch from main.
+2. Make your changes locally.
+3. Ensure the site runs locally with yarn dev.
+4. Open a PR with a clear summary and screenshots if UI changed.
