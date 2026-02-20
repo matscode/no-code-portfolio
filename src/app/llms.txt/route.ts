@@ -3,6 +3,8 @@ import { NextResponse } from "next/server";
 import { buildDescription } from "@/helpers/buildDescription";
 import { sortWorkExperience } from "@/helpers/sortWorkExperience";
 
+export const dynamic = "force-static";
+
 export async function GET() {
   const [profile, contact, features, socialLinks] = await Promise.all([
     reader.singletons.profile.read(),
