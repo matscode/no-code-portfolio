@@ -41,13 +41,13 @@ Click Deploy with Vercel to create your copy. When Vercel asks for a project nam
 
 #### Step 2: Confirm the first deploy is successful
 
-Wait for the initial deployment to complete.
+Wait for the initial deployment to complete, then click **Continue to Dashboard**.
 
-![Initial deployment success](./public/docs/SCR-20260219-crvx.png)
+![Successful deployment screen](./public/docs/SCR-20260219-coaz.png)
 
 #### Step 3: Open the project dashboard
 
-In the dashboard, click the **+** button beside Domains to manage your live URL.
+In the dashboard, click the **+** button next to **Domains** so you can pick your own **vercel.app** address for the site you just deployed. If you want to see the site right away, click the current **vercel.app** link in the Domains list to open it in a new tab.
 
 ![Vercel dashboard](./public/docs/SCR-20260219-cpjm.png)
 
@@ -56,6 +56,7 @@ In the dashboard, click the **+** button beside Domains to manage your live URL.
 Pick a free `vercel.app` domain or connect a custom domain. If you want a custom domain, follow Vercel’s official guide.
 
 [Vercel domain setup guide](https://vercel.com/docs/projects/domains)
+Need a domain? Use my referral link: [https://www.hello.cv/?via=mat](https://www.hello.cv/?via=mat)
 
 ![Vercel domains page](./public/docs/SCR-20260219-cpeu.png)
 
@@ -71,29 +72,18 @@ Select **Remove old domain** and save.
 
 ![Confirm domain change](./public/docs/SCR-20260219-cqpv.png)
 
-#### Step 7: Verify the new domain
+#### Step 7: Create a GitHub app
 
-You should now see the new domain. Click it to preview your site. The site is live, but keep going to secure your admin and update content.
-
-![New domain live](./public/docs/SCR-20260219-cqsw.png)
-
-#### Step 8: Preview the live site
-
-After the deploy finishes, you should see a success screen like this, then open your live site to confirm it loads correctly.
-
-![Successful deployment screen](./public/docs/SCR-20260219-coaz.png)
-![First look at your deployed site](./public/docs/SCR-20260219-ozyu.png)
-
-#### Step 9: Create your GitHub App
+You’re creating a GitHub app so you can enable a secure login on your website where you can manage your information.
 
 Create a new GitHub App manually (no manifest):
 
 [Create a GitHub App](https://github.com/settings/apps/new)
 
 Fill in:
-- GitHub App name (example: <Your Name> NCP App)
-- Homepage URL: https://your-domain.com (use the domain you set in Step 8)
-- Callback URL: https://your-domain.com/api/keystatic/github/oauth/callback (use the same domain from Step 8)
+- GitHub App name (example: <your-username> NCP App)
+- Homepage URL: https://your-domain.com (use the domain you set in Step 6)
+- Callback URL: https://your-domain.com/api/keystatic/github/oauth/callback (use the same domain from Step 6)
 - Webhook: Disable (enabled by default)
 - Repository permissions:
   - Contents: Read & write
@@ -109,51 +99,40 @@ Install the GitHub App on your account and grant it access to the project you cr
 ![GitHub App install screen](./public/docs/SCR-20260219-tcnj.png)
 ![Choose repositories for the GitHub App](./public/docs/SCR-20260219-tdea.png)
 
-#### Step 10: Add initial environment variables
+#### Step 8: Add initial environment variables
+
+Environment variables are private settings your site needs to connect to GitHub, so your admin dashboard can save updates you make to your information.
 
 Generate a KEYSTATIC_SECRET (at least 32 characters) using a password generator:
 
 [1Password password generator](https://1password.com/password-generator/)
 
-Open Vercel → your deployed project from Step 8 → Settings → Environment Variables.
+Open Vercel → your deployed project from Step 6 → Settings → Environment Variables.
 
-![Vercel environment variables page](./public/docs/SCR-20260219-obyw.png)
-
-Replace the placeholders with your own values, then paste the whole block into the Environment Variables form so it auto-fills the keys and values:
-
-![Add environment variables modal](./public/docs/SCR-20260219-odix.png)
+Copy this block, replace the placeholders with your own values, then paste the whole block into the Environment Variables form so it auto-fills the keys and values. Ignore the # and anything after it.
 
 ```env
-NEXT_PUBLIC_NCP_APP_URL=https://your-domain.com
-NEXT_PUBLIC_NCP_STORAGE_KIND=github
-NEXT_PUBLIC_NCP_GITHUB_USERNAME=your-github-username
-NEXT_PUBLIC_NCP_REPO_NAME=no-code-portfolio
-KEYSTATIC_GITHUB_CLIENT_ID=from-github-app
-KEYSTATIC_GITHUB_CLIENT_SECRET=from-github-app
-KEYSTATIC_SECRET=generated-strong-secret
-NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG=from-github-app
+NEXT_PUBLIC_NCP_APP_URL=https://your-domain.com # domain from Step 6
+NEXT_PUBLIC_NCP_STORAGE_KIND=github # keep as github
+NEXT_PUBLIC_NCP_GITHUB_USERNAME=your-github-username # your GitHub username
+NEXT_PUBLIC_NCP_REPO_NAME=no-code-portfolio # project name from Step 1
+KEYSTATIC_GITHUB_CLIENT_ID=from-github-app # from the GitHub app
+KEYSTATIC_GITHUB_CLIENT_SECRET=from-github-app # from the GitHub app
+KEYSTATIC_SECRET=generated-strong-secret # from the generator above
+NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG=from-github-app # from the GitHub app
 ```
 
+![Vercel environment variables page](./public/docs/SCR-20260219-obyw.png)
+![Add environment variables modal](./public/docs/SCR-20260219-odix.png)
 ![Environment variables pasted in](./public/docs/SCR-20260219-orvd.png)
 
-Where the values come from:
-- NEXT_PUBLIC_NCP_APP_URL: the domain you set in Step 8
-- NEXT_PUBLIC_NCP_GITHUB_USERNAME: your GitHub username
-- NEXT_PUBLIC_NCP_REPO_NAME: the project name you chose in Step 1 (recommended: no-code-portfolio)
-- KEYSTATIC_GITHUB_CLIENT_ID, KEYSTATIC_GITHUB_CLIENT_SECRET, NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG: your GitHub App details
-- KEYSTATIC_SECRET: the generated value from the password generator (at least 32 characters)
+#### Step 9: Redeploy your website
 
-#### Step 11: Redeploy with the new env vars
+Open Vercel → your project → Deployments. Find the most recent deployment and click **Redeploy** so all the new configurations take effect.
 
-Redeploy in Vercel so the environment variables take effect.
+#### Step 10: Launch and edit your site
 
-![Environment variables saved with redeploy prompt](./public/docs/SCR-20260219-osft.png)
-
-If you miss the popup, open Vercel → Deployments and click Redeploy on the latest deployment.
-
-#### Step 12: Launch and edit your site
-
-Open your website and visit /keystatic to update your content.
+Open https://your-domain.com/keystatic (replace with your real domain). Sign in with GitHub, approve the app, then you’ll land on your admin dashboard where you can update your personal information for your website.
 
 ![Keystatic login screen](./public/docs/SCR-20260219-rkke.png)
 ![Signing in to GitHub](./public/docs/SCR-20260219-rlgc.png)
