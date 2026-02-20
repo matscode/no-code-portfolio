@@ -2,6 +2,8 @@
 
 A sophisticated personal website optimized for the AI era — launch a premium portfolio and link‑in‑bio in under 30 minutes, 100% free, with no forced branding.
 
+Support My Work: [https://paystack.shop/pay/matscode](https://paystack.shop/pay/matscode)
+
 ## Use Cases
 
 - Creator link-in-bio for videos, resources, and community links
@@ -25,7 +27,9 @@ A sophisticated personal website optimized for the AI era — launch a premium p
 
 Click Deploy with Vercel to create your copy. When Vercel asks for a project name, use **no-code-portfolio** so your repo stays clean and consistent.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/matscode/no-code-portfolio&project-name=no-code-portfolio&repository-name=no-code-portfolio)
+<a href="https://vercel.com/new/clone?repository-url=https://github.com/matscode/no-code-portfolio&project-name=no-code-portfolio&repository-name=no-code-portfolio">
+  <img src="https://vercel.com/button" alt="Deploy with Vercel" width="240" />
+</a>
 
 ![Vercel project setup](./public/docs/SCR-20260219-cumg.png)
 
@@ -69,9 +73,10 @@ You should now see the new domain. Click it to preview your site. The site is li
 
 #### Step 8: Preview the live site
 
-Open your live site to confirm it loads correctly.
+After the deploy finishes, you should see a success screen like this, then open your live site to confirm it loads correctly.
 
-![Live site preview](./public/docs/SCR-20260219-coaz.png)
+![Successful deployment screen](./public/docs/SCR-20260219-coaz.png)
+![First look at your deployed site](./public/docs/SCR-20260219-ozyu.png)
 
 #### Step 9: Create your GitHub App
 
@@ -91,7 +96,12 @@ Fill in:
 
 Create the app, then generate a Client Secret (it is not created automatically). Copy the Client ID, Client Secret, and App Slug for safe keeping. You will use them in the next step.
 
-Install the GitHub App on your account and grant it access to the project you created in Step 1 (recommended name: no-code-portfolio).
+![GitHub App created successfully](./public/docs/SCR-20260219-qpze.png)
+
+Install the GitHub App on your account and grant it access to the project you created in Step 1 (recommended name: no-code-portfolio). Selecting only that repository adds extra layer of github account security, but all repositories is the fastest option.
+
+![GitHub App install screen](./public/docs/SCR-20260219-tcnj.png)
+![Choose repositories for the GitHub App](./public/docs/SCR-20260219-tdea.png)
 
 #### Step 10: Add initial environment variables
 
@@ -101,7 +111,11 @@ Generate a KEYSTATIC_SECRET (at least 32 characters) using a password generator:
 
 Open Vercel → your deployed project from Step 8 → Settings → Environment Variables.
 
+![Vercel environment variables page](./public/docs/SCR-20260219-obyw.png)
+
 Replace the placeholders with your own values, then paste the whole block into the Environment Variables form so it auto-fills the keys and values:
+
+![Add environment variables modal](./public/docs/SCR-20260219-odix.png)
 
 ```env
 NEXT_PUBLIC_NCP_APP_URL=https://your-domain.com
@@ -114,6 +128,8 @@ KEYSTATIC_SECRET=generated-strong-secret
 NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG=from-github-app
 ```
 
+![Environment variables pasted in](./public/docs/SCR-20260219-orvd.png)
+
 Where the values come from:
 - NEXT_PUBLIC_NCP_APP_URL: the domain you set in Step 8
 - NEXT_PUBLIC_NCP_GITHUB_USERNAME: your GitHub username
@@ -125,9 +141,27 @@ Where the values come from:
 
 Redeploy in Vercel so the environment variables take effect.
 
+![Environment variables saved with redeploy prompt](./public/docs/SCR-20260219-osft.png)
+
+If you miss the popup, open Vercel → Deployments and click Redeploy on the latest deployment.
+
 #### Step 12: Launch and edit your site
 
 Open your website and visit /keystatic to update your content.
+
+![Keystatic login screen](./public/docs/SCR-20260219-rkke.png)
+![Signing in to GitHub](./public/docs/SCR-20260219-rlgc.png)
+![Keystatic dashboard](./public/docs/SCR-20260219-tdsz.png)
+
+#### Optional: Switch to a custom domain later
+
+Follow Vercel’s custom domain guide: https://vercel.com/docs/projects/domains
+
+If you switch domains, update your GitHub App Homepage URL and Callback URL, and update NEXT_PUBLIC_NCP_APP_URL environment variable on your vercel project to the new domain. This step is critical as it helps with your discoverability online.
+
+Need a domain? Use my referral link: [https://www.hello.cv/?via=mat](https://www.hello.cv/?via=mat)
+
+Support My Work: [https://paystack.shop/pay/matscode](https://paystack.shop/pay/matscode)
 
 ## Customization
 
