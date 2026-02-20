@@ -6,6 +6,8 @@ Support My Work: [https://paystack.shop/pay/matscode](https://paystack.shop/pay/
 
 ![Fully set up portfolio preview](./public/docs/SCR-20260220-hysa.png)
 
+Demos: [Product Designer](https://bombay-sigma.vercel.app)
+
 ## Use Cases
 
 - Creator link-in-bio for videos, resources, and community links
@@ -140,11 +142,14 @@ Open https://your-domain.com/keystatic (replace with your real domain). Sign in 
 
 #### Optional: Switch to a custom domain later
 
-Follow Vercel’s custom domain guide: https://vercel.com/docs/projects/domains
+If you want a custom domain (like yourname.com or yourname.cv), you can buy one here: [https://www.hello.cv/?via=mat](https://www.hello.cv/?via=mat), then follow Vercel’s guide to connect the domain to your website:
+https://vercel.com/docs/projects/domains
 
-If you switch domains, update your GitHub App Homepage URL and Callback URL, and update NEXT_PUBLIC_NCP_APP_URL environment variable on your vercel project to the new domain. This step is critical as it helps with your discoverability online.
+After the domain is connected, open your GitHub App settings and update these two fields:
+- Homepage URL → https://your-domain.com
+- Callback URL → https://your-domain.com/api/keystatic/github/oauth/callback
 
-Need a domain? Use my referral link: [https://www.hello.cv/?via=mat](https://www.hello.cv/?via=mat)
+Then update `NEXT_PUBLIC_NCP_APP_URL` in Vercel to the same domain and redeploy.
 
 Support My Work: [https://paystack.shop/pay/matscode](https://paystack.shop/pay/matscode)
 
