@@ -4,6 +4,8 @@ A sophisticated personal website optimized for the AI era — launch a premium p
 
 Support My Work: [https://paystack.shop/pay/matscode](https://paystack.shop/pay/matscode)
 
+![Fully set up portfolio preview](./public/docs/SCR-20260220-hysa.png)
+
 ## Use Cases
 
 - Creator link-in-bio for videos, resources, and community links
@@ -21,6 +23,8 @@ Support My Work: [https://paystack.shop/pay/matscode](https://paystack.shop/pay/
 
 ## Deploying Your Personal Website
 
+Before you start, you’ll need free accounts on [GitHub.com](https://github.com) and [Vercel.com](https://vercel.com). GitHub stores your portfolio content, and Vercel hosts the live site. It’s a simple setup, and both are free.
+
 ### Steps
 
 #### Step 1: Create the Vercel project
@@ -30,6 +34,8 @@ Click Deploy with Vercel to create your copy. When Vercel asks for a project nam
 <a href="https://vercel.com/new/clone?repository-url=https://github.com/matscode/no-code-portfolio&project-name=no-code-portfolio&repository-name=no-code-portfolio">
   <img src="https://vercel.com/button" alt="Deploy with Vercel" width="240" />
 </a>
+
+<br />
 
 ![Vercel project setup](./public/docs/SCR-20260219-cumg.png)
 
