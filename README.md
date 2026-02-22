@@ -157,4 +157,4 @@ Support My Work: [https://paystack.shop/pay/matscode](https://paystack.shop/pay/
 
 Optional: Use this section only if you want to customize or tinker with the project. It is not part of the setup steps.
 
-See ENGINEERING_README.md for local development and customization.
+See [ENGINEERING_README.md](./ENGINEERING_README.md) for local development and customization.
